@@ -1,0 +1,10 @@
+{
+	"folders": [
+		{
+			"path": "../yellow-site/js1"
+		}
+	],
+	"settings": {
+		"liveServer.settings.port": 5501
+	}
+}
