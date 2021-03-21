@@ -61,4 +61,3 @@ document.getElementById("gemini").addEventListener("click", function () {
   });
 });
 
-const reload=()=>window.location.reload();
