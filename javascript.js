@@ -5,7 +5,6 @@ for (var i = 0; i < arr.length; i++) {
   var modalImg = document.getElementById("modal01");
   img.onclick = function () {
     modal.style.display = "block";
-    modalImg.src = "this.src";
   };
 }
 var span = document.getElementsByClassName("close")[0];
@@ -52,5 +51,5 @@ function newQuote() {
   document.getElementById("taurus").innerHTML = quotes[1][randomNumber];
   var randomNumber = Math.floor(Math.random() * quotes[2].length);
   document.getElementById("gemini").innerHTML = quotes[2][randomNumber];
-}
+};
 window.addEventListener("load", newQuote, true);
