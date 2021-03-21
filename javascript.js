@@ -25,31 +25,40 @@ var quotes = [
     "Aries is resilient, guileless and optimistic.",
     "Failure is not an option for an Aries, it is a prerequisite for success.",
   ],
+  [
+    "Taurus will say it to your face, not behind your back.",
+    "Taurus won’t sit and wait. They get sh*t done themselves.",
+    "Taurus are doing more than you know, on things you don’t know about.",
+    "Taurus remembers everything you do and don’t do.",
+    "Everything you know about Taurus is what they want you to know.",
+  ],
 
-  ["Is this working?", "please"],
-
-  ["yes!"],
+  [
+    "Gemini can either be your biggest blessing or your worst nightmare.",
+    "You never know what’s on the mind of a Gemini.",
+    "Geminis will give you all the attention until you give them a reason not to.",
+    "Geminis act like they are fine when they aren’t.",
+    "Gemini can be impatient. They save their attention to people they truly care about.",
+  ],
 ];
 
-document.getElementbyId("aries").addEventListener("click", function () {
-  var randomNumber = Math.floor(Math.random() * quotes[0].length);
-  console.log(quotes[0][randomNumber]);
+document.getElementById("aries").addEventListener("click", function () {
+  document.getElementById("newQuoteBtn").addEventListener("click", function () {
+    var randomNumber = Math.floor(Math.random() * quotes[0].length);
+    document.getElementById("modalContent").innerHTML = quotes[0][randomNumber];
+  });
 });
-document.getElementbyId("taurus").addEventListener("click", function () {
-  var randomNumber = Math.floor(Math.random() * quotes[1].length);
-  console.log(quotes[1][randomNumber]);
+document.getElementById("taurus").addEventListener("click", function () {
+  document.getElementById("newQuoteBtn").addEventListener("click", function () {
+    var randomNumber = Math.floor(Math.random() * quotes[1].length);
+    document.getElementById("modalContent").innerHTML = quotes[1][randomNumber];
+  });
 });
-document.getElementbyId("gemini").addEventListener("click", function () {
-  var randomNumber = Math.floor(Math.random() * quotes[2].length);
-  console.log(quotes[2][randomNumber]);
+document.getElementById("gemini").addEventListener("click", function () {
+  document.getElementById("newQuoteBtn").addEventListener("click", function () {
+    var randomNumber = Math.floor(Math.random() * quotes[2].length);
+    document.getElementById("modalContent").innerHTML = quotes[2][randomNumber];
+  });
 });
 
-function newQuote() {
-  var randomNumber = Math.floor(Math.random() * quotes[0].length);
-  document.getElementById("aries").innerHTML = quotes[0][randomNumber];
-  var randomNumber = Math.floor(Math.random() * quotes[1].length);
-  document.getElementById("taurus").innerHTML = quotes[1][randomNumber];
-  var randomNumber = Math.floor(Math.random() * quotes[2].length);
-  document.getElementById("gemini").innerHTML = quotes[2][randomNumber];
-};
-window.addEventListener("load", newQuote, true);
+const reload=()=>window.location.reload();
