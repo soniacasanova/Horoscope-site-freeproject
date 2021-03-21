@@ -40,12 +40,17 @@ document.getElementbyId("taurus").addEventListener("click", function () {
   var randomNumber = Math.floor(Math.random() * quotes[1].length);
   console.log(quotes[1][randomNumber]);
 });
+document.getElementbyId("gemini").addEventListener("click", function () {
+  var randomNumber = Math.floor(Math.random() * quotes[2].length);
+  console.log(quotes[2][randomNumber]);
+});
 
 function newQuote() {
   var randomNumber = Math.floor(Math.random() * quotes[0].length);
   document.getElementById("aries").innerHTML = quotes[0][randomNumber];
   var randomNumber = Math.floor(Math.random() * quotes[1].length);
   document.getElementById("taurus").innerHTML = quotes[1][randomNumber];
+  var randomNumber = Math.floor(Math.random() * quotes[2].length);
+  document.getElementById("gemini").innerHTML = quotes[2][randomNumber];
 }
-
 window.addEventListener("load", newQuote, true);
