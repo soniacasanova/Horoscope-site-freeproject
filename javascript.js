@@ -1,12 +1,4 @@
 var modal = document.getElementById("myModal");
-var arr = ["myImg0", "myImg1", "myImg2"];
-for (var i = 0; i < arr.length; i++) {
-  var img = document.getElementById(arr[i]);
-  var modalImg = document.getElementById("modal01");
-  img.onclick = function () {
-    modal.style.display = "block";
-  };
-}
 var span = document.getElementsByClassName("close")[0];
 
 span.onclick = function () {
@@ -41,23 +33,20 @@ var quotes = [
     "Gemini can be impatient. They save their attention to people they truly care about.",
   ],
 ];
+function newQuote(i) {
+  var randomNumber = Math.floor(Math.random() * quotes[i].length);
+      document.getElementById("modalContent").innerHTML = quotes[i][randomNumber];
+}
+const zodiac = ["aries", "taurus", "gemini"];
+  for(let i = 0 ; i < zodiac.length; i++) {
+    document.getElementById(zodiac[i]).addEventListener("click", function () {
+      modal.style.display = "block"; 
+      newQuote(i);
+      document.getElementById("newQuoteBtn").addEventListener("click", function () {
+        newQuote(i);
+      });
+    });
+  }
 
-document.getElementById("aries").addEventListener("click", function () {
-  document.getElementById("newQuoteBtn").addEventListener("click", function () {
-    var randomNumber = Math.floor(Math.random() * quotes[0].length);
-    document.getElementById("modalContent").innerHTML = quotes[0][randomNumber];
-  });
-});
-document.getElementById("taurus").addEventListener("click", function () {
-  document.getElementById("newQuoteBtn").addEventListener("click", function () {
-    var randomNumber = Math.floor(Math.random() * quotes[1].length);
-    document.getElementById("modalContent").innerHTML = quotes[1][randomNumber];
-  });
-});
-document.getElementById("gemini").addEventListener("click", function () {
-  document.getElementById("newQuoteBtn").addEventListener("click", function () {
-    var randomNumber = Math.floor(Math.random() * quotes[2].length);
-    document.getElementById("modalContent").innerHTML = quotes[2][randomNumber];
-  });
-});
+
 
